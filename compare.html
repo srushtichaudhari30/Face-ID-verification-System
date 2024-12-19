@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Compare Faces</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Compare Captured Face and Uploaded ID Proof</h1>
+        <form action="/compare" method="POST">
+            <button type="submit">Compare Faces</button>
+        </form>
+
+        <!-- Display the result message if it exists -->
+        {% if result_message %}
+        <div class="result {{ result_class }}">
+            <p>{{ result_message }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
